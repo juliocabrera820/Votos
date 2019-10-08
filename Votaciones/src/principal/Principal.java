@@ -5,6 +5,7 @@ import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -18,6 +19,7 @@ public class Principal {
          */
         //Grafica de barras
         generarBarras();
+        generarPastel();
 
     }
 
@@ -29,12 +31,28 @@ public class Principal {
             data.addValue(40, "Persona", "Candidato 3");
 
             JFreeChart jfre = ChartFactory.createBarChart3D("Votaciones", "Candidatos", "Votos", data, PlotOrientation.VERTICAL, true, true, true);
-            ChartFrame frame = new ChartFrame("Votos",jfre);
+            ChartFrame frame = new ChartFrame("Votos", jfre);
             frame.setSize(600, 400);
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
         } catch (Exception e) {
-            System.out.println("Error "+e);
+            System.out.println("Error " + e);
+        }
+    }
+
+    public static void generarPastel() {
+        try {
+            DefaultPieDataset data = new DefaultPieDataset();
+            data.setValue("candidato1", 35);
+            data.setValue("candidato2", 15);
+            data.setValue("candidato3", 50);
+            JFreeChart jfree = ChartFactory.createPieChart3D("Votaciones", data, true, true, true);
+            ChartFrame frame = new ChartFrame("Votaciones",jfree);
+            frame.setSize(600, 400);
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+        } catch (Exception e) {
+            System.out.println("Error " + e);
         }
     }
 
