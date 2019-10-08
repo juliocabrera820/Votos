@@ -4,6 +4,9 @@ package modelo;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
@@ -37,6 +40,14 @@ public class Modelo {
         }
     
        return sumador;
+    }
+    
+    
+    public String obtenerFecha(){
+        
+        Date Fecha = new Date();
+        DateFormat fecha = new SimpleDateFormat("HH:mm:ss dd/MM/YYYY");
+        return fecha.toString();
     }
     
    
