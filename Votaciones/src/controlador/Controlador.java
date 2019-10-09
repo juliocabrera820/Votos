@@ -61,7 +61,7 @@ public class Controlador implements ActionListener {
 
     public void iniciar() {
         this.vista.setTitle("Votaciones");
-        this.vista.setSize(800, 600);
+        this.vista.setSize(800, 440);
         this.vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);
     }
