@@ -1,5 +1,6 @@
 package modelo;
 
+import java.util.ArrayList;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -16,13 +17,10 @@ public class Grafica {
     public Grafica() {
     }
 
-    public void generarBarras() {
+    public void generarBarras(ArrayList<String> registros) {
         try {
             DefaultCategoryDataset data = new DefaultCategoryDataset();
-            data.addValue(20, "Persona", "Candidato 1");
-            data.addValue(25, "Persona", "Candidato 2");
-            data.addValue(40, "Persona", "Candidato 3");
-
+            data.addValue(registros.size(), "Votos", "Producto 1");
             JFreeChart jfre = ChartFactory.createBarChart3D("Votaciones", "Candidatos", "Votos", data, PlotOrientation.VERTICAL, true, true, true);
             ChartFrame frame = new ChartFrame("Votos", jfre);
             frame.setSize(600, 400);
@@ -33,12 +31,10 @@ public class Grafica {
         }
     }
 
-    public void generarPastel() {
+    public void generarPastel(ArrayList<String> registros) {
         try {
             DefaultPieDataset data = new DefaultPieDataset();
-            data.setValue("candidato1", 35);
-            data.setValue("candidato2", 15);
-            data.setValue("candidato3", 50);
+            data.setValue("Producto 1", registros.size());
             JFreeChart jfree = ChartFactory.createPieChart3D("Votaciones", data, true, true, true);
             ChartFrame frame = new ChartFrame("Votaciones", jfree);
             frame.setSize(600, 400);
