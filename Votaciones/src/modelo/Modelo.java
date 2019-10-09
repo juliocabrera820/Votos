@@ -46,10 +46,6 @@ public class Modelo {
         }
     }
 
-    public int numeroVotos(ArrayList<String> votos) {
-        return votos.size();
-    }
-
     public String obtenerFecha() {
         Date fecha = new Date();
         DateFormat formato = new SimpleDateFormat("HH:mm:ss dd/MM/YYYY");

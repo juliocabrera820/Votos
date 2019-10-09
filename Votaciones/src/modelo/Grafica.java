@@ -1,6 +1,5 @@
 package modelo;
 
-import java.util.ArrayList;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -21,7 +20,7 @@ public class Grafica {
         try {
             DefaultCategoryDataset data = new DefaultCategoryDataset();
             data.addValue(votos1, "Votos", "Producto 1");
-            data.addValue(votos3, "Votos", "Producto 2");
+            data.addValue(votos2, "Votos", "Producto 2");
             data.addValue(votos3, "Votos", "Producto 3");
             JFreeChart jfre = ChartFactory.createBarChart3D("Votaciones", "Candidatos", "Votos", data, PlotOrientation.VERTICAL, true, true, true);
             ChartFrame frame = new ChartFrame("Votos", jfre);
