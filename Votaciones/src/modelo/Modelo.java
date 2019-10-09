@@ -3,6 +3,9 @@ package modelo;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
@@ -13,6 +16,10 @@ import javax.swing.JOptionPane;
 public class Modelo {
 
     private Grafica grafica;
+           
+    public Modelo() {
+        grafica = new Grafica();
+    }
 
     public int sumarArchivo(String direccion) {
         //Principal pr = new Principal();
@@ -36,10 +43,13 @@ public class Modelo {
         return sumador;
     }
 
-    public Modelo() {
-        grafica = new Grafica();
+    public String obtenerFecha(){
+        
+        Date Fecha = new Date();
+        DateFormat fecha = new SimpleDateFormat("HH:mm:ss dd/MM/YYYY");
+        return fecha.toString();
     }
-
+ 
     public void graficaBarra() {
         grafica.generarBarras();
     }

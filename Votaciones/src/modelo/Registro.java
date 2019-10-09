@@ -1,6 +1,8 @@
 
 package modelo;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -22,6 +24,14 @@ public class Registro {
     public void setFechaCreacion(Date fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
+    
+      public String obtenerFecha(){
+        
+        Date Fecha = new Date();
+        DateFormat fecha = new SimpleDateFormat("HH:mm:ss dd/MM/YYYY");
+        return fecha.toString();
+    }
+    
 
     @Override
     public String toString() {
