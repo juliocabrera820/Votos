@@ -1,7 +1,6 @@
 package principal;
 
 import controlador.Controlador;
-import modelo.Grafica;
 
 /**
  *
@@ -10,9 +9,8 @@ import modelo.Grafica;
 public class Principal {
 
     public static void main(String[] args) {
-
         Controlador controlador = new Controlador();
-        
+        controlador.iniciar();
     }
 
 }
