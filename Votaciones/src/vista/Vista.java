@@ -36,10 +36,11 @@ public class Vista extends javax.swing.JFrame {
         btn2 = new javax.swing.JButton();
         btn3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        btnGrafico = new javax.swing.JButton();
+        btnPastel = new javax.swing.JButton();
         txtVoto1 = new javax.swing.JTextField();
         txtVoto2 = new javax.swing.JTextField();
         txtVoto3 = new javax.swing.JTextField();
+        btnBarra = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,12 +58,19 @@ public class Vista extends javax.swing.JFrame {
 
         btn3.setText("voto");
 
-        jLabel5.setText("Enseñar grafico");
+        jLabel5.setText("Enseñar graficos");
 
-        btnGrafico.setText("Mostrar Grafico");
-        btnGrafico.addActionListener(new java.awt.event.ActionListener() {
+        btnPastel.setText("Grafica Pastel");
+        btnPastel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGraficoActionPerformed(evt);
+                btnPastelActionPerformed(evt);
+            }
+        });
+
+        btnBarra.setText("Grafica Barra");
+        btnBarra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBarraActionPerformed(evt);
             }
         });
 
@@ -80,7 +88,7 @@ public class Vista extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(72, 72, 72)
                         .addComponent(txtVoto1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,10 +103,15 @@ public class Vista extends javax.swing.JFrame {
                     .addComponent(btn3)
                     .addComponent(txtVoto3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(136, 136, 136))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(345, 345, 345)
-                .addComponent(btnGrafico)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnPastel)
+                .addGap(230, 230, 230))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(217, 217, 217)
+                    .addComponent(btnBarra)
+                    .addContainerGap(495, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,9 +135,14 @@ public class Vista extends javax.swing.JFrame {
                     .addComponent(txtVoto3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(81, 81, 81)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnGrafico)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnPastel)
+                .addContainerGap(79, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(329, Short.MAX_VALUE)
+                    .addComponent(btnBarra)
+                    .addGap(75, 75, 75)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -141,9 +159,13 @@ public class Vista extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGraficoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficoActionPerformed
+    private void btnPastelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPastelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnGraficoActionPerformed
+    }//GEN-LAST:event_btnPastelActionPerformed
+
+    private void btnBarraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBarraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBarraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,7 +209,8 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JButton btn1;
     public javax.swing.JButton btn2;
     public javax.swing.JButton btn3;
-    public javax.swing.JButton btnGrafico;
+    public javax.swing.JButton btnBarra;
+    public javax.swing.JButton btnPastel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
