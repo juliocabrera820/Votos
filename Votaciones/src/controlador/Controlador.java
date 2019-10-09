@@ -2,7 +2,6 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import modelo.Modelo;
 import vista.Vista;
 
@@ -32,7 +31,6 @@ public class Controlador implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        ArrayList<String> votaciones = new ArrayList<>();
         if (this.vista.btn1 == ae.getSource()) {
             modelo.escribirArchivo("/home/julio-cabrera/ArchivosProductos/prod1.txt");
             votos1++;
@@ -49,12 +47,10 @@ public class Controlador implements ActionListener {
             this.vista.txtVoto3.setText(String.valueOf(votos3));
         }
         if (this.vista.btnBarra == ae.getSource()) {
-            votaciones = this.modelo.leerArchivo("/home/julio-cabrera/ArchivosProductos/prod1.txt");
-            this.modelo.graficaBarra(votaciones);
+            this.modelo.graficaBarra(votos1,votos2,votos3);
         }
         if (this.vista.btnPastel == ae.getSource()) {
-            votaciones = this.modelo.leerArchivo("/home/julio-cabrera/ArchivosProductos/prod1.txt");
-            this.modelo.graficaPastel(votaciones);
+            this.modelo.graficaPastel(votos1,votos2,votos3);
         }
 
     }

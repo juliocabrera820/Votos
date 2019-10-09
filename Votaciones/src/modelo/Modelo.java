@@ -56,12 +56,12 @@ public class Modelo {
         return formato.format(fecha);
     }
 
-    public void graficaBarra(ArrayList<String> votos) {
-        grafica.generarBarras(votos);
+    public void graficaBarra(int votos1, int votos2, int votos3) {
+        grafica.generarBarras(votos1,votos2,votos3);
     }
 
-    public void graficaPastel(ArrayList<String> votos) {
-        grafica.generarPastel(votos);
+    public void graficaPastel(int votos1, int votos2, int votos3) {
+        grafica.generarPastel(votos1,votos2,votos3);
     }
 
 }
