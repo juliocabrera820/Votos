@@ -25,7 +25,7 @@ public class Controlador implements ActionListener{
         vista.btn1.addActionListener(this);
         vista.btn2.addActionListener(this);
         vista.btn3.addActionListener(this);
-        vista.btnGrafico.addActionListener(this);
+        vista.btnPastel.addActionListener(this);
     }
 
     @Override
@@ -39,7 +39,10 @@ public class Controlador implements ActionListener{
         if(this.vista.btn3 == ae.getSource()){
             //TODO VOTO3
         }
-        if(this.vista.btnGrafico == ae.getSource()){
+        if(this.vista.btnBarra == ae.getSource()){
+            
+        }
+        if(this.vista.btnPastel == ae.getSource()){
             
         }
         //TODO BOTON GRAFICA BARRA
