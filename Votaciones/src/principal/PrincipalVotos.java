@@ -13,6 +13,7 @@ public class PrincipalVotos {
     public static void main(String[] args) {
         ControladorVotos controlador = new ControladorVotos();
         controlador.iniciar();
+        controlador.votacionesEquipos();
     }
     
 }
