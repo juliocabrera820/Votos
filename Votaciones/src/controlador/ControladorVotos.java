@@ -36,7 +36,7 @@ public class ControladorVotos implements ActionListener {
         if (this.vista.btnVotar == ae.getSource()) {
             String producto = String.valueOf(this.vista.comboVotos.getSelectedItem());
             if (producto.equals("Seleccionar")) {
-                JOptionPane.showInputDialog(null, "Elija un producto");
+                JOptionPane.showMessageDialog(null, "Elija un producto");
             } else {
                 this.modelo.votar(producto);
             }
