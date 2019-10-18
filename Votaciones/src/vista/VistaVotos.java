@@ -31,16 +31,25 @@ public class VistaVotos extends javax.swing.JFrame {
         comboVotos = new javax.swing.JComboBox<>();
         btnBarra = new javax.swing.JButton();
         btnPastel = new javax.swing.JButton();
+        txtVotos = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnVotar.setText("Votar");
 
         comboVotos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
+        comboVotos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboVotosActionPerformed(evt);
+            }
+        });
 
         btnBarra.setText("Barra");
 
         btnPastel.setText("Pastel");
+
+        jLabel1.setText("NO. votos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,11 +59,15 @@ public class VistaVotos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(298, 298, 298)
-                        .addComponent(btnVotar))
+                        .addComponent(btnVotar)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtVotos, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(226, 226, 226)
                         .addComponent(comboVotos, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(169, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(166, 166, 166)
                 .addComponent(btnBarra)
@@ -68,7 +81,10 @@ public class VistaVotos extends javax.swing.JFrame {
                 .addContainerGap(64, Short.MAX_VALUE)
                 .addComponent(comboVotos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(86, 86, 86)
-                .addComponent(btnVotar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnVotar)
+                    .addComponent(txtVotos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(74, 74, 74)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBarra)
@@ -78,6 +94,11 @@ public class VistaVotos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void comboVotosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboVotosActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_comboVotosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -105,6 +126,7 @@ public class VistaVotos extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(VistaVotos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -119,5 +141,7 @@ public class VistaVotos extends javax.swing.JFrame {
     public javax.swing.JButton btnPastel;
     public javax.swing.JButton btnVotar;
     public javax.swing.JComboBox<String> comboVotos;
+    private javax.swing.JLabel jLabel1;
+    public javax.swing.JTextField txtVotos;
     // End of variables declaration//GEN-END:variables
 }
