@@ -18,7 +18,7 @@ public class ControladorVotos implements ActionListener {
     private VistaVotos vista;
     private ArrayList<String> productos;
     private Map<String, Integer> votos;
-     private Map<String, Integer> votos1;
+   
 
     public ControladorVotos() {
         modelo = new ModeloVotos();
@@ -26,24 +26,24 @@ public class ControladorVotos implements ActionListener {
         productos = this.modelo.leerArchivoProductos("C:\\Users\\alberto.rivero\\Desktop\\productos.txt");
         agregarProductos();
         votos = this.modelo.votosProductos(productos);
-        votos1 = this.modelo.votosProductos(productos);
         this.vista.btnBarra.addActionListener(this);
         this.vista.btnPastel.addActionListener(this);
         this.vista.btnVotar.addActionListener(this);
+        this.vista.btnTotal.addActionListener(this);
     }
-int num;
+
     @Override
     public void actionPerformed(ActionEvent ae) {
-        num = this.vista.comboVotos.getSelectedIndex();
+      
         if (this.vista.btnVotar == ae.getSource()) {
             String producto = String.valueOf(this.vista.comboVotos.getSelectedItem());
             
             if (producto.equals("Seleccionar")) {
-                limpiarCampoVotos();
+               
                 JOptionPane.showMessageDialog(null, "Elija un producto");
             } else {
                 this.modelo.votar(producto);
-                mostrarVotos(producto);
+               
                 
             }
         } else if (this.vista.btnBarra == ae.getSource()) {
@@ -53,14 +53,12 @@ int num;
             this.votos = this.modelo.votosProductos(productos);
             this.modelo.generarPastel(votos);
         }
+        else if(this.vista.btnTotal==ae.getSource()){
+            votacionesEquipos();
+        }
     }
     
-    public void mostrarVotos(String producto){
-        votos =  this.modelo.votosProductos(productos);
-        this.vista.txtVotos.setText(String.valueOf(votos.get(producto)));
-        
-        
-    }
+
 
     public void agregarProductos() {
         for (String producto : productos) {
@@ -69,9 +67,7 @@ int num;
     }
     
     
-    public void limpiarCampoVotos(){
-        this.vista.txtVotos.setText("");
-    }
+   
 
     public void iniciar() {
         this.vista.setTitle("Votaciones");
@@ -81,11 +77,10 @@ int num;
     }
 
     public void votacionesEquipos() {
-        //votos.forEach((k, v) -> System.out.println("Producto " + k + " votos: " + v));
-        /**
-         * 
-         * Ya no es necesario este metodo, ya tiene el contador integrado dentro de la app
-         */
+        ArrayList nuevo = new ArrayList();
+   nuevo.add(votos.toString());
+        JOptionPane.showMessageDialog(null, nuevo);
+       
     }
 
 }

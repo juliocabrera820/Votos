@@ -31,8 +31,7 @@ public class VistaVotos extends javax.swing.JFrame {
         comboVotos = new javax.swing.JComboBox<>();
         btnBarra = new javax.swing.JButton();
         btnPastel = new javax.swing.JButton();
-        txtVotos = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        btnTotal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,7 +48,7 @@ public class VistaVotos extends javax.swing.JFrame {
 
         btnPastel.setText("Pastel");
 
-        jLabel1.setText("NO. votos");
+        btnTotal.setText("votos totales");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,16 +57,14 @@ public class VistaVotos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(298, 298, 298)
-                        .addComponent(btnVotar)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtVotos, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1))
+                        .addGap(112, 112, 112)
+                        .addComponent(btnTotal)
+                        .addGap(109, 109, 109)
+                        .addComponent(btnVotar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(226, 226, 226)
                         .addComponent(comboVotos, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(207, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(166, 166, 166)
                 .addComponent(btnBarra)
@@ -83,8 +80,7 @@ public class VistaVotos extends javax.swing.JFrame {
                 .addGap(86, 86, 86)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVotar)
-                    .addComponent(txtVotos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(btnTotal))
                 .addGap(74, 74, 74)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBarra)
@@ -139,9 +135,8 @@ public class VistaVotos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnBarra;
     public javax.swing.JButton btnPastel;
+    public javax.swing.JButton btnTotal;
     public javax.swing.JButton btnVotar;
     public javax.swing.JComboBox<String> comboVotos;
-    private javax.swing.JLabel jLabel1;
-    public javax.swing.JTextField txtVotos;
     // End of variables declaration//GEN-END:variables
 }
