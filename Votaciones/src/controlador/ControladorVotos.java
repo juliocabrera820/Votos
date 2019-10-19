@@ -18,7 +18,6 @@ public class ControladorVotos implements ActionListener {
     private VistaVotos vista;
     private ArrayList<String> productos;
     private Map<String, Integer> votos;
-   
 
     public ControladorVotos() {
         modelo = new ModeloVotos();
@@ -34,17 +33,16 @@ public class ControladorVotos implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-      
+
         if (this.vista.btnVotar == ae.getSource()) {
             String producto = String.valueOf(this.vista.comboVotos.getSelectedItem());
-            
+
             if (producto.equals("Seleccionar")) {
-               
+
                 JOptionPane.showMessageDialog(null, "Elija un producto");
             } else {
                 this.modelo.votar(producto);
-               
-                
+
             }
         } else if (this.vista.btnBarra == ae.getSource()) {
             this.votos = this.modelo.votosProductos(productos);
@@ -52,22 +50,16 @@ public class ControladorVotos implements ActionListener {
         } else if (this.vista.btnPastel == ae.getSource()) {
             this.votos = this.modelo.votosProductos(productos);
             this.modelo.generarPastel(votos);
-        }
-        else if(this.vista.btnTotal==ae.getSource()){
+        } else if (this.vista.btnTotal == ae.getSource()) {
             votacionesEquipos();
         }
     }
-    
-
 
     public void agregarProductos() {
         for (String producto : productos) {
             this.vista.comboVotos.addItem(producto);
         }
     }
-    
-    
-   
 
     public void iniciar() {
         this.vista.setTitle("Votaciones");
@@ -78,9 +70,9 @@ public class ControladorVotos implements ActionListener {
 
     public void votacionesEquipos() {
         ArrayList nuevo = new ArrayList();
-   nuevo.add(votos.toString());
+        nuevo.add(votos.toString());
         JOptionPane.showMessageDialog(null, nuevo);
-       
+
     }
 
 }
