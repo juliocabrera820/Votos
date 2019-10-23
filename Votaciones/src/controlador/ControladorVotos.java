@@ -22,7 +22,7 @@ public class ControladorVotos implements ActionListener {
     public ControladorVotos() {
         modelo = new ModeloVotos();
         vista = new VistaVotos();
-        productos = this.modelo.leerArchivoProductos("C:\\Users\\alberto.rivero\\Desktop\\productos.txt");
+        productos = this.modelo.leerArchivoProductos("/home/julio-cabrera/ArchivosProductos/Productos.txt");
         agregarProductos();
         votos = this.modelo.votosProductos(productos);
         this.vista.btnBarra.addActionListener(this);

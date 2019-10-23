@@ -42,7 +42,7 @@ public class ModeloVotos {
     }
 
     public void votar(String producto) {
-        String ruta = "C:\\Users\\alberto.rivero\\Desktop\\" + producto + ".txt";
+        String ruta = "/home/julio-cabrera/ArchivosProductos/" + producto + ".txt";
         crearArchivo(ruta);
         escribirArchivo(ruta, obtenerFecha());
     }
@@ -81,11 +81,11 @@ public class ModeloVotos {
         Map<String, Integer> votos = new HashMap<String, Integer>();
         for (String producto : productos) {
             try {
-                File archivo = new File("C:\\Users\\alberto.rivero\\Desktop\\" + producto + ".txt");
+                File archivo = new File("/home/julio-cabrera/ArchivosProductos/" + producto + ".txt");
                 if (!archivo.exists()) {
                     votos.put(producto, 0);
                 } else {
-                    int votosProducto = (int) Files.lines(Paths.get("C:\\Users\\alberto.rivero\\Desktop\\" + producto + ".txt")).count();
+                    int votosProducto = (int) Files.lines(Paths.get("/home/julio-cabrera/ArchivosProductos/" + producto + ".txt")).count();
                     votos.put(producto, votosProducto);
                 }
             } catch (IOException ex) {
