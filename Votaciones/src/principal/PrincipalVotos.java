@@ -1,7 +1,7 @@
 
 package principal;
 
-import controlador.ControladorVotos;
+import controlador.ControladorPrincipal;
 
 
 /**
@@ -11,9 +11,8 @@ import controlador.ControladorVotos;
 public class PrincipalVotos {
     
     public static void main(String[] args) {
-        ControladorVotos controlador = new ControladorVotos();
+        ControladorPrincipal controlador = new ControladorPrincipal();
         controlador.iniciar();
-        //controlador.votacionesEquipos();
     }
     
 }
