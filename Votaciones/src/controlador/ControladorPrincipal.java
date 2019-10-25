@@ -3,6 +3,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
 import modelo.ModeloArchivo;
@@ -20,23 +21,26 @@ public class ControladorPrincipal implements ActionListener {
     private VistaVotos vista;
     private ArrayList<String> productos;
     private Map<String, Integer> votos;
+    private String ruta;
 
     public ControladorPrincipal() {
 
         modeloArchivo = new ModeloArchivo();
         vista = new VistaVotos();
-        productos = this.modeloArchivo.leerArchivoProductos("/home/julio-cabrera/ArchivosProductos/Productos.txt");
-        agregarProductos();
-        votos = this.modeloArchivo.votosProductos(productos);
+        productos = new ArrayList<>();
+        //votos = this.modeloArchivo.votosProductos(productos);
+        votos = new HashMap<String, Integer>();
         this.vista.btnBarra.addActionListener(this);
         this.vista.btnPastel.addActionListener(this);
         this.vista.btnVotar.addActionListener(this);
         this.vista.btnTotal.addActionListener(this);
+        this.vista.btnAbrir.addActionListener(this);
         controladorBarra = new ControladorBarra(votos);
         controladorPastel = new ControladorPastel(votos);
+        ruta = "";
 
     }
-     
+
     public void iniciar() {
         this.vista.setTitle("Votaciones");
         this.vista.setSize(700, 440);
@@ -74,6 +78,13 @@ public class ControladorPrincipal implements ActionListener {
             }
         } else if (this.vista.btnTotal == ae.getSource()) {
             votacionesEquipos();
+        } else if (this.vista.btnAbrir == ae.getSource()) {
+            ruta = this.modeloArchivo.obtenerRuta();
+            productos = this.modeloArchivo.leerArchivoProductos(ruta);
+            agregarProductos();
+            votos = this.modeloArchivo.votosProductos(productos);
+            this.controladorBarra.actualizarModelo(votos);
+            this.controladorPastel.actualizarModelo(votos);
         }
     }
 
