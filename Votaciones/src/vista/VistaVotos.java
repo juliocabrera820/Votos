@@ -27,81 +27,87 @@ public class VistaVotos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnVotar = new javax.swing.JButton();
-        comboVotos = new javax.swing.JComboBox<>();
-        btnBarra = new javax.swing.JButton();
-        btnPastel = new javax.swing.JButton();
-        btnTotal = new javax.swing.JButton();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         btnAbrir = new javax.swing.JButton();
+        btn1 = new javax.swing.JButton();
+        btn2 = new javax.swing.JButton();
+        btn3 = new javax.swing.JButton();
+        txt = new javax.swing.JTextField();
+        txt2 = new javax.swing.JTextField();
+        txt3 = new javax.swing.JTextField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+
+        jMenu1.setText("jMenu1");
+
+        jMenu2.setText("jMenu2");
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnVotar.setText("Votar");
-
-        comboVotos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
-        comboVotos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboVotosActionPerformed(evt);
-            }
-        });
-
-        btnBarra.setText("Barra");
-
-        btnPastel.setText("Pastel");
-
-        btnTotal.setText("votos totales");
-
         btnAbrir.setText("Cargar Productos");
+
+        btn1.setText("jButton1");
+
+        btn2.setText("jButton2");
+
+        btn3.setText("jButton3");
+
+        txt.setEditable(false);
+
+        txt2.setEditable(false);
+
+        txt3.setEditable(false);
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAbrir)
+                .addGap(288, 288, 288))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(btnTotal)
-                        .addGap(109, 109, 109)
-                        .addComponent(btnVotar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(226, 226, 226)
-                        .addComponent(comboVotos, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(btnAbrir)))
-                .addContainerGap(35, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(166, 166, 166)
-                .addComponent(btnBarra)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 195, Short.MAX_VALUE)
-                .addComponent(btnPastel)
-                .addGap(180, 180, 180))
+                .addGap(123, 123, 123)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt))
+                .addGap(137, 137, 137)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt3))
+                .addGap(98, 98, 98))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(comboVotos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAbrir))
-                .addGap(80, 80, 80)
+                .addGap(111, 111, 111)
+                .addComponent(btnAbrir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVotar)
-                    .addComponent(btnTotal))
-                .addGap(74, 74, 74)
+                    .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBarra)
-                    .addComponent(btnPastel))
-                .addGap(61, 61, 61))
+                    .addComponent(btn1)
+                    .addComponent(btn2)
+                    .addComponent(btn3))
+                .addGap(109, 109, 109))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void comboVotosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboVotosActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_comboVotosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,11 +146,17 @@ public class VistaVotos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btn1;
+    public javax.swing.JButton btn2;
+    public javax.swing.JButton btn3;
     public javax.swing.JButton btnAbrir;
-    public javax.swing.JButton btnBarra;
-    public javax.swing.JButton btnPastel;
-    public javax.swing.JButton btnTotal;
-    public javax.swing.JButton btnVotar;
-    public javax.swing.JComboBox<String> comboVotos;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    public javax.swing.JTextField txt;
+    public javax.swing.JTextField txt2;
+    public javax.swing.JTextField txt3;
     // End of variables declaration//GEN-END:variables
 }
