@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import javax.swing.JOptionPane;
 import modelo.ModeloArchivo;
 import vista.VistaVotos;
 
@@ -28,17 +27,14 @@ public class ControladorPrincipal implements ActionListener {
         modeloArchivo = new ModeloArchivo();
         vista = new VistaVotos();
         productos = new ArrayList<>();
-        //votos = this.modeloArchivo.votosProductos(productos);
         votos = new HashMap<String, Integer>();
-        this.vista.btnBarra.addActionListener(this);
-        this.vista.btnPastel.addActionListener(this);
-        this.vista.btnVotar.addActionListener(this);
-        this.vista.btnTotal.addActionListener(this);
         this.vista.btnAbrir.addActionListener(this);
         controladorBarra = new ControladorBarra(votos);
         controladorPastel = new ControladorPastel(votos);
         ruta = "";
-
+        this.vista.btn1.addActionListener(this);
+        this.vista.btn2.addActionListener(this);
+        this.vista.btn3.addActionListener(this);
     }
 
     public void iniciar() {
@@ -48,44 +44,44 @@ public class ControladorPrincipal implements ActionListener {
         this.vista.setVisible(true);
     }
 
-    public void agregarProductos() {
-        for (String producto : productos) {
-            this.vista.comboVotos.addItem(producto);
-        }
-    }
-
-    public void votacionesEquipos() {
-        ArrayList nuevo = new ArrayList();
-        nuevo.add(votos.toString());
-        JOptionPane.showMessageDialog(null, nuevo);
-
-    }
-
     @Override
     public void actionPerformed(ActionEvent ae) {
 
-        if (this.vista.btnVotar == ae.getSource()) {
-            String producto = String.valueOf(this.vista.comboVotos.getSelectedItem());
-
-            if (producto.equals("Seleccionar")) {
-
-                JOptionPane.showMessageDialog(null, "Elija un producto");
-            } else {
-                this.modeloArchivo.votar(producto);
-                this.votos = this.modeloArchivo.votosProductos(productos);
-                this.controladorBarra.actualizarModelo(votos);
-                this.controladorPastel.actualizarModelo(votos);
-            }
-        } else if (this.vista.btnTotal == ae.getSource()) {
-            votacionesEquipos();
-        } else if (this.vista.btnAbrir == ae.getSource()) {
+        if (this.vista.btnAbrir == ae.getSource()) {
             ruta = this.modeloArchivo.obtenerRuta();
             productos = this.modeloArchivo.leerArchivoProductos(ruta);
-            agregarProductos();
             votos = this.modeloArchivo.votosProductos(productos);
             this.controladorBarra.actualizarModelo(votos);
             this.controladorPastel.actualizarModelo(votos);
+            nombrarBotones();
+            this.vista.txt.setText(String.valueOf(this.votos.get((this.productos.get(0)))));
+            this.vista.txt2.setText(String.valueOf(this.votos.get((this.productos.get(1)))));
+            this.vista.txt3.setText(String.valueOf(this.votos.get((this.productos.get(2)))));
+        } else if (this.vista.btn1 == ae.getSource()) {
+            this.modeloArchivo.votar(this.productos.get(0));
+            votos = this.modeloArchivo.votosProductos(productos);
+            this.controladorBarra.actualizarModelo(votos);
+            this.controladorPastel.actualizarModelo(votos);
+            this.vista.txt.setText(String.valueOf(this.votos.get((this.productos.get(0)))));
+        } else if (this.vista.btn2 == ae.getSource()) {
+            this.modeloArchivo.votar(this.productos.get(1));
+            votos = this.modeloArchivo.votosProductos(productos);
+            this.controladorBarra.actualizarModelo(votos);
+            this.controladorPastel.actualizarModelo(votos);
+            this.vista.txt2.setText(String.valueOf(this.votos.get(this.productos.get(1))));
+        } else if (this.vista.btn3 == ae.getSource()) {
+            this.modeloArchivo.votar(this.productos.get(2));
+            votos = this.modeloArchivo.votosProductos(productos);
+            this.controladorBarra.actualizarModelo(votos);
+            this.controladorPastel.actualizarModelo(votos);
+            this.vista.txt3.setText(String.valueOf(this.votos.get(this.productos.get(2))));
         }
+    }
+
+    public void nombrarBotones() {
+        this.vista.btn1.setText(productos.get(0));
+        this.vista.btn2.setText(productos.get(1));
+        this.vista.btn3.setText(productos.get(2));
     }
 
 }
