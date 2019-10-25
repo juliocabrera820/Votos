@@ -15,17 +15,18 @@ import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.stream.Collectors;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author julio-cabrera
  */
-public class ModeloArchivo implements Observer{
+public class ModeloArchivo implements Observer {
 
     public ModeloArchivo() {
     }
-    
+
     public ArrayList<String> leerArchivoProductos(String ruta) {
         ArrayList<String> productos = new ArrayList<>();
         try {
@@ -89,7 +90,17 @@ public class ModeloArchivo implements Observer{
         }
         return votos;
     }
-    
+
+    public String obtenerRuta() {
+        JFileChooser seleccion = new JFileChooser();
+        String ruta= "";
+        int opcion = seleccion.showOpenDialog(null);
+        if (opcion == JFileChooser.APPROVE_OPTION) {
+            ruta = seleccion.getSelectedFile().getAbsolutePath();
+        }
+        return ruta;
+    }
+
     @Override
     public void update(Observable o, Object o1) {
 
