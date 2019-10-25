@@ -127,4 +127,16 @@ public class ModeloArchivo {
         return sistemaOperativo;
     }
 
+    public void escribirBitacora(String carpeta, String OS, String registro) {
+        String slash = "";
+        if (!OS.equals("Linux")) {
+            slash = "\\";
+        } else {
+            slash = "/";
+        }
+        String ruta = carpeta + slash + "bitacora";
+        crearArchivo(ruta);
+        escribirArchivo(ruta, registro +" "+ obtenerFecha());
+    }
+
 }

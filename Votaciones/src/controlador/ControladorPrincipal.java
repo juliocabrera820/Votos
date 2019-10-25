@@ -53,33 +53,38 @@ public class ControladorPrincipal implements ActionListener {
         if (this.vista.btnAbrir == ae.getSource()) {
             ruta = this.modeloArchivo.obtenerRuta();
             productos = this.modeloArchivo.leerArchivoProductos(ruta);
-            votos = this.modeloArchivo.votosProductos(productos,carpeta,this.modeloArchivo.sistemaOperativo());
+            votos = this.modeloArchivo.votosProductos(productos, carpeta, this.modeloArchivo.sistemaOperativo());
             this.controladorBarra.actualizarModelo(votos);
             this.controladorPastel.actualizarModelo(votos);
             nombrarBotones();
             this.vista.txt.setText(String.valueOf(this.votos.get((this.productos.get(0)))));
             this.vista.txt2.setText(String.valueOf(this.votos.get((this.productos.get(1)))));
             this.vista.txt3.setText(String.valueOf(this.votos.get((this.productos.get(2)))));
+            this.modeloArchivo.escribirBitacora(carpeta, this.modeloArchivo.sistemaOperativo(), "Se abrio el archivo de productos ");
         } else if (this.vista.btn1 == ae.getSource()) {
-            this.modeloArchivo.votar(this.productos.get(0),carpeta,this.modeloArchivo.sistemaOperativo());
-            votos = this.modeloArchivo.votosProductos(productos,carpeta,this.modeloArchivo.sistemaOperativo());
+            this.modeloArchivo.votar(this.productos.get(0), carpeta, this.modeloArchivo.sistemaOperativo());
+            votos = this.modeloArchivo.votosProductos(productos, carpeta, this.modeloArchivo.sistemaOperativo());
             this.controladorBarra.actualizarModelo(votos);
             this.controladorPastel.actualizarModelo(votos);
             this.vista.txt.setText(String.valueOf(this.votos.get((this.productos.get(0)))));
+            this.modeloArchivo.escribirBitacora(carpeta, this.modeloArchivo.sistemaOperativo(), "Se votó por " + this.productos.get(0));
         } else if (this.vista.btn2 == ae.getSource()) {
-            this.modeloArchivo.votar(this.productos.get(1),carpeta,this.modeloArchivo.sistemaOperativo());
-            votos = this.modeloArchivo.votosProductos(productos,carpeta,this.modeloArchivo.sistemaOperativo());
+            this.modeloArchivo.votar(this.productos.get(1), carpeta, this.modeloArchivo.sistemaOperativo());
+            votos = this.modeloArchivo.votosProductos(productos, carpeta, this.modeloArchivo.sistemaOperativo());
             this.controladorBarra.actualizarModelo(votos);
             this.controladorPastel.actualizarModelo(votos);
             this.vista.txt2.setText(String.valueOf(this.votos.get(this.productos.get(1))));
+            this.modeloArchivo.escribirBitacora(carpeta, this.modeloArchivo.sistemaOperativo(), "Se votó por " + this.productos.get(1));
         } else if (this.vista.btn3 == ae.getSource()) {
-            this.modeloArchivo.votar(this.productos.get(2),carpeta,this.modeloArchivo.sistemaOperativo());
-            votos = this.modeloArchivo.votosProductos(productos,carpeta,this.modeloArchivo.sistemaOperativo());
+            this.modeloArchivo.votar(this.productos.get(2), carpeta, this.modeloArchivo.sistemaOperativo());
+            votos = this.modeloArchivo.votosProductos(productos, carpeta, this.modeloArchivo.sistemaOperativo());
             this.controladorBarra.actualizarModelo(votos);
             this.controladorPastel.actualizarModelo(votos);
             this.vista.txt3.setText(String.valueOf(this.votos.get(this.productos.get(2))));
-        }else if(this.vista.btnguardar == ae.getSource()){
+            this.modeloArchivo.escribirBitacora(carpeta, this.modeloArchivo.sistemaOperativo(), "Se votó por " + this.productos.get(2));
+        } else if (this.vista.btnguardar == ae.getSource()) {
             carpeta = this.modeloArchivo.obtenerCarpeta();
+            this.modeloArchivo.escribirBitacora(carpeta, this.modeloArchivo.sistemaOperativo(), "Se guardó en la carpeta "+carpeta);
         }
     }
 
