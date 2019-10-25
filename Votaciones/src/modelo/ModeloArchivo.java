@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Observable;
-import java.util.Observer;
 import java.util.stream.Collectors;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -22,7 +20,7 @@ import javax.swing.JOptionPane;
  *
  * @author julio-cabrera
  */
-public class ModeloArchivo implements Observer {
+public class ModeloArchivo {
 
     public ModeloArchivo() {
     }
@@ -37,8 +35,14 @@ public class ModeloArchivo implements Observer {
         return productos;
     }
 
-    public void votar(String producto) {
-        String ruta = "/home/julio-cabrera/ArchivosProductos/" + producto + ".txt";
+    public void votar(String producto, String carpeta, String OS) {
+        String slash = "";
+        if (!OS.equals("Linux")) {
+            slash = "\\";
+        } else {
+            slash = "/";
+        }
+        String ruta = carpeta + slash + producto + ".txt";
         crearArchivo(ruta);
         escribirArchivo(ruta, obtenerFecha());
     }
@@ -73,15 +77,21 @@ public class ModeloArchivo implements Observer {
         }
     }
 
-    public Map<String, Integer> votosProductos(ArrayList<String> productos) {
+    public Map<String, Integer> votosProductos(ArrayList<String> productos, String carpeta, String OS) {
         Map<String, Integer> votos = new HashMap<String, Integer>();
         for (String producto : productos) {
             try {
-                File archivo = new File("/home/julio-cabrera/ArchivosProductos/" + producto + ".txt");
+                String slash = "";
+                if (!OS.equals("Linux")) {
+                    slash = "\\";
+                } else {
+                    slash = "/";
+                }
+                File archivo = new File(carpeta + slash + producto + ".txt");
                 if (!archivo.exists()) {
                     votos.put(producto, 0);
                 } else {
-                    int votosProducto = (int) Files.lines(Paths.get("/home/julio-cabrera/ArchivosProductos/" + producto + ".txt")).count();
+                    int votosProducto = (int) Files.lines(Paths.get(carpeta + slash + producto + ".txt")).count();
                     votos.put(producto, votosProducto);
                 }
             } catch (IOException ex) {
@@ -93,7 +103,7 @@ public class ModeloArchivo implements Observer {
 
     public String obtenerRuta() {
         JFileChooser seleccion = new JFileChooser();
-        String ruta= "";
+        String ruta = "";
         int opcion = seleccion.showOpenDialog(null);
         if (opcion == JFileChooser.APPROVE_OPTION) {
             ruta = seleccion.getSelectedFile().getAbsolutePath();
@@ -101,9 +111,20 @@ public class ModeloArchivo implements Observer {
         return ruta;
     }
 
-    @Override
-    public void update(Observable o, Object o1) {
+    public String obtenerCarpeta() {
+        JFileChooser seleccion = new JFileChooser();
+        seleccion.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        String ruta = "";
+        int opcion = seleccion.showOpenDialog(null);
+        if (opcion == JFileChooser.APPROVE_OPTION) {
+            ruta = seleccion.getSelectedFile().getAbsolutePath();
+        }
+        return ruta;
+    }
 
+    public String sistemaOperativo() {
+        String sistemaOperativo = System.getProperty("os.name");
+        return sistemaOperativo;
     }
 
 }
