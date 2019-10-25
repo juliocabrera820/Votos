@@ -38,6 +38,7 @@ public class VistaVotos extends javax.swing.JFrame {
         txt = new javax.swing.JTextField();
         txt2 = new javax.swing.JTextField();
         txt3 = new javax.swing.JTextField();
+        btnguardar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
 
         jMenu1.setText("jMenu1");
@@ -63,16 +64,14 @@ public class VistaVotos extends javax.swing.JFrame {
         txt2.setEditable(false);
 
         txt3.setEditable(false);
+
+        btnguardar.setText("Guardar");
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAbrir)
-                .addGap(288, 288, 288))
             .addGroup(layout.createSequentialGroup()
                 .addGap(123, 123, 123)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -87,6 +86,15 @@ public class VistaVotos extends javax.swing.JFrame {
                     .addComponent(btn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txt3))
                 .addGap(98, 98, 98))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnAbrir)
+                        .addGap(288, 288, 288))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnguardar)
+                        .addGap(131, 131, 131))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +111,9 @@ public class VistaVotos extends javax.swing.JFrame {
                     .addComponent(btn1)
                     .addComponent(btn2)
                     .addComponent(btn3))
-                .addGap(109, 109, 109))
+                .addGap(39, 39, 39)
+                .addComponent(btnguardar)
+                .addGap(40, 40, 40))
         );
 
         pack();
@@ -150,6 +160,7 @@ public class VistaVotos extends javax.swing.JFrame {
     public javax.swing.JButton btn2;
     public javax.swing.JButton btn3;
     public javax.swing.JButton btnAbrir;
+    public javax.swing.JButton btnguardar;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
