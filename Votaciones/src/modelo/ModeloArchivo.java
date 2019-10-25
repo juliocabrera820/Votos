@@ -134,7 +134,7 @@ public class ModeloArchivo {
         } else {
             slash = "/";
         }
-        String ruta = carpeta + slash + "bitacora";
+        String ruta = carpeta + slash + "bitacora.txt";
         crearArchivo(ruta);
         escribirArchivo(ruta, registro +" "+ obtenerFecha());
     }
